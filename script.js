@@ -1,22 +1,17 @@
-function threeSum(arr, target) {
-	
-    let res = []
-    for(let i=0; i<=arr.length-3; i++){
-        let temp = arr[i]
-        res.push(arr[i])
-        for(let j=i+1,t=0; t<2; t++){
-            temp += arr[j]
-            res.push(arr[j])
-            j++
-        }
-        if(temp <= target){
-            return res
-        }else{
-            res = []
-        }
-    }
-  
-}
+function threeSum(num){
+    let res = [];
 
+    let temp = num
+    while(temp > 0){
+        if(temp%2 === 0){
+            res.push(0)
+        
+        }else {
+            res.push(1)
+        }
+        temp = parseInt(temp/2)
+    }
+    return res.reverse().join("")
+}
 
 module.exports = threeSum;
